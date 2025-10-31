@@ -5,10 +5,10 @@ resource "openstack_networking_network_v2" "k8s_network" {
 }
 
 resource "openstack_networking_subnet_v2" "k8s_subnet" {
-  name            = "k8s_subnet"
-  network_id     = openstack_networking_network_v2.k8s_network.id
-  cidr            = "192.168.1.0/24"
-  ip_version      = 4
+  name       = "k8s_subnet"
+  network_id = openstack_networking_network_v2.k8s_network.id
+  cidr       = "192.168.1.0/24"
+  ip_version = 4
   allocation_pool {
     start = "192.168.1.10"
     end   = "192.168.1.100"
